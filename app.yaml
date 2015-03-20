@@ -1,0 +1,18 @@
+application: earthme-front
+version: 1
+runtime: python27
+threadsafe: 1
+api_version: 1
+
+handlers:
+- url: (.*)/
+  static_files: src/main/webapp\1/index.html
+  upload: src/main/webapp
+  http_headers:
+      Access-Control-Allow-Origin: "*"
+- url: (.*)
+  static_files: src/main/webapp\1
+  upload: src/main/webapp
+  http_headers:
+      Access-Control-Allow-Origin: "*"
+  
